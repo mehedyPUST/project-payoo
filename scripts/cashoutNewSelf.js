@@ -1,16 +1,16 @@
 document.getElementById('btn-cashout').addEventListener('click', function () {
     // console.log('cashout button clicked');
-    const cashOutNumber = valueExtratorFromInput('cashout-number');
+    const cashOutNumber = valueExtractorFromInput('cashout-number');
     if (cashOutNumber.length !== 11) {
         alert('Invalid Agent Number');
         return;
     }
-    const cashOutAmount = valueExtratorFromInput('cashout-amount');
+    const cashOutAmount = valueExtractorFromInput('cashout-amount');
     if (cashOutAmount <= 0) {
         alert('Invalid Amount');
         return;
     }
-    const cashOutPin = valueExtratorFromInput('cashout-pin');
+    const cashOutPin = valueExtractorFromInput('cashout-pin');
     if (cashOutPin !== '2580') {
         alert('Invalid Pin');
         return;
