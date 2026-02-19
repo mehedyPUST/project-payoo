@@ -7,3 +7,23 @@ function getValueFromInput(id) {
     return value;
 };
 
+
+
+
+// get balance er machine ----> balance return
+
+function getBalance() {
+    const balanceElement = document.getElementById('balance');
+    const balance = balanceElement.innerText;
+    console.log(Number(balance))
+    return Number(balance);
+
+
+}
+
+// balance set machine
+function setBalance(value) {
+    const balanceElement = document.getElementById('balance');
+    balanceElement.innerText = value;
+}
+// 24-11 7.21

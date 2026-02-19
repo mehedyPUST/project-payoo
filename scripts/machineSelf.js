@@ -4,3 +4,5 @@ function valueExtratorFromInput(id) {
     console.log(id, value);
     return value;
 }
+
+

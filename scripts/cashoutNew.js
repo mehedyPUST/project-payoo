@@ -17,12 +17,12 @@ document.getElementById('btn-cashout').addEventListener('click', function () {
 
 
     // 3  get the current balance
-    const balanceElement = document.getElementById('balance');
-    const balance = balanceElement.innerText;
+
+    const currentBalance = getBalance();
     console.log(balance);
 
     // 4 calculate balance 
-    const newBalance = Number(balance) - Number(cashOutAmount);
+    const newBalance = currentBalance - Number(cashOutAmount);
     console.log(newBalance);
 
     if (newBalance < 0) {
@@ -37,7 +37,7 @@ document.getElementById('btn-cashout').addEventListener('click', function () {
         // 5-1 ::true show an alert >> set balance
         alert('Cashout Successfull');
         console.log('New Balance:', newBalance);
-        balanceElement.innerText = newBalance;
+        document.getElementById('balance').innerText = newBalance;
 
     } else {
         // 5-2  ::false show anerror alert > return
