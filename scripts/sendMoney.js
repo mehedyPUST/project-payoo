@@ -24,9 +24,14 @@ document.getElementById('send-money-btn').addEventListener('click', function () 
         alert('Invalid Pin');
         return;
     } else {
-        alert('Send Money Success ');
+
         const currentBalance = getBalance();
         const balanceAfterSendMoney = currentBalance - Number(sendMoneyAmount);
+        if (balanceAfterSendMoney < 0) {
+            alert("Insufficient Fund");
+            return;
+        }
+        alert('Send Money Success ');
         setBalance(balanceAfterSendMoney);
 
     }

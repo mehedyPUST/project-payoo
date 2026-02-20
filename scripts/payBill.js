@@ -1,39 +1,44 @@
 document.getElementById('pay-bill-btn').addEventListener('click', function () {
     // console.log('Add Money Button Clicked');
     // 1 bank name get 
-    const payBillOptionNane = getValueFromInput('pay-bill-option');
+    const payBillOption = getValueFromInput('pay-bill-option');
     // console.log(bankName);
-    if (bankName == 'Select a Bank') {
-        alert("Please Select A Bank");
+    if (payBillOption == 'Select an Option') {
+        alert("Please Select a Valid Option");
         return;
     }
     // step 2 get bank account number 
-    const accNumber = getValueFromInput('bank-account-number');
-    if (accNumber.length != 11) {
-        alert("Invalid Bank Account Number");
+    const billerAccountNumber = getValueFromInput('biller-account-number');
+    if (billerAccountNumber.length != 11) {
+        alert("Invalid Biller Account Number");
         return;
     }
 
     // stp 3 get amount 
 
-    const addMoneyAmount = getValueFromInput('add-money-amount');
-    if (addMoneyAmount <= 0) {
+    const payBillAmount = getValueFromInput('pay-bill-amount');
+    if (payBillAmount <= 0) {
         alert('Invalid Amount');
         return;
     }
 
     // stp 4 get the pin and validation
-    const addMoneyPin = getValueFromInput('add-money-pin');
+    const payBillPin = getValueFromInput('pay-bill-pin');
 
-    if (addMoneyPin !== '2580') {
+    if (payBillPin !== '2580') {
         alert('Invalid Pin');
         return;
     } else {
-        alert('Add Money Success ');
-        const currentBalance = getBalance();
-        const balanceAfterAddMoney = currentBalance + Number(addMoneyAmount);
-        setBalance(balanceAfterAddMoney);
 
+        const currentBalance = getBalance();
+        const balanceAfterPayBill = currentBalance - Number(payBillAmount);
+        if (balanceAfterPayBill < 0) {
+            alert("Insufficient Fund");
+            return;
+        }
+        alert('Bill Paid Successfully ');
+        setBalance(balanceAfterPayBill);
     }
+
 
 });

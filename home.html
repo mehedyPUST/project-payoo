@@ -58,21 +58,21 @@
         <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
         <div class="buttons grid grid-cols-3 gap-3 ">
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('add-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <!-- eikhane flex-col use korar karon hocche button er nijer property holo flex  -->
 
 
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('cashout')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <!-- eikhane flex-col use korar karon hocche button er nijer property holo flex  -->
 
 
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('send-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <!-- eikhane flex-col use korar karon hocche button er nijer property holo flex  -->
 
 
@@ -86,7 +86,7 @@
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('pay-bill')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <!-- eikhane flex-col use korar karon hocche button er nijer property holo flex  -->
 
 
@@ -141,7 +141,7 @@
 
 
 
-    <section id="cashout" class="w-11/12 mx-auto py-5 hidden">
+    <section id="cashout" class="w-11/12 mx-auto py-5 hidden ">
         <h2 class="font-bold text-xl mb-5">Cashout</h2>
         <div class="card bg-base-100 w-full  shadow  rounded-2xl">
             <div class="card-body">
@@ -166,7 +166,7 @@
     </section>
 
 
-    <section id="send-money" class="w-11/12 mx-auto py-5 hidden">
+    <section id="send-money" class="w-11/12 mx-auto py-5 hidden ">
         <h2 class="font-bold text-xl mb-5">Transfer Money</h2>
         <div class="card bg-base-100 w-full  shadow  rounded-2xl">
             <div class="card-body">
@@ -191,12 +191,12 @@
         </div>
     </section>
 
-    <section id="pay-bill" class=" w-11/12 mx-auto py-5 ">
+    <section id="pay-bill" class=" w-11/12 mx-auto py-5 hidden ">
         <h2 class="font-bold text-xl mb-5">Pay Bill</h2>
         <div class="card bg-base-100 w-full  shadow  rounded-2xl">
             <div class="card-body">
                 <fieldset class="fieldset  ">
-                    <label class="label text-neutral font-bold">Select Bank</label>
+                    <label class="label text-neutral font-bold">Select to Pay</label>
                     <select id="pay-bill-option" class="select w-full rounded-full bg-base-200">
                         <option disabled selected>Select an Option</option>
                         <option value="PBS">PBS</option>
@@ -207,7 +207,7 @@
                     </select>
                     <br>
                     <label class="label text-neutral font-bold">Biller ID</label>
-                    <input id="pay-bill-account-number" maxlength="11" minlength="11" type="text"
+                    <input id="biller-account-number" maxlength="11" minlength="11" type="text"
                         class="input rounded-full bg-base-200 w-full" placeholder=" Biller ID Number" />
                     <br>
                     <label class="label text-neutral font-bold">Amount</label>
@@ -226,6 +226,8 @@
 
 
     </section>
+
+
 
 
 
