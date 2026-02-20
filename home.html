@@ -166,7 +166,7 @@
     </section>
 
 
-    <section id="send-money" class="w-11/12 mx-auto py-5">
+    <section id="send-money" class="w-11/12 mx-auto py-5 hidden">
         <h2 class="font-bold text-xl mb-5">Transfer Money</h2>
         <div class="card bg-base-100 w-full  shadow  rounded-2xl">
             <div class="card-body">
@@ -191,6 +191,42 @@
         </div>
     </section>
 
+    <section id="pay-bill" class=" w-11/12 mx-auto py-5 ">
+        <h2 class="font-bold text-xl mb-5">Pay Bill</h2>
+        <div class="card bg-base-100 w-full  shadow  rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset  ">
+                    <label class="label text-neutral font-bold">Select Bank</label>
+                    <select id="pay-bill-option" class="select w-full rounded-full bg-base-200">
+                        <option disabled selected>Select an Option</option>
+                        <option value="PBS">PBS</option>
+                        <option Value="WZPDCL">WZPDCL</option>
+                        <option value="NESCO">NESCO</option>
+                        <option value="DESCO">DESCO</option>
+                        <option value="DPDC">DPDC</option>
+                    </select>
+                    <br>
+                    <label class="label text-neutral font-bold">Biller ID</label>
+                    <input id="pay-bill-account-number" maxlength="11" minlength="11" type="text"
+                        class="input rounded-full bg-base-200 w-full" placeholder=" Biller ID Number" />
+                    <br>
+                    <label class="label text-neutral font-bold">Amount</label>
+                    <input id="pay-bill-amount" type="number" class="input rounded-full bg-base-200 w-full"
+                        placeholder=" Enter Amount to Add" />
+                    <br>
+                    <label class="label text-neutral font-bold">4 Digit Pin </label>
+                    <input id="pay-bill-pin" type="password" maxlength="4" minlength="4"
+                        class="input rounded-full w-full bg-base-200" placeholder="Enter 4 Digit Pin" />
+
+                    <button id="pay-bill-btn" class="btn btn-primary rounded-full w-[320px] mx-auto mt-4">Pay
+                        Now</button>
+                </fieldset>
+            </div>
+        </div>
+
+
+    </section>
+
 
 
 
@@ -209,6 +245,8 @@
     <script src="./scripts/cashoutNew.js"></script>
     <script src="./scripts/addMoney.js"></script>
     <script src="./scripts/sendMoney.js"></script>
+    <script src="./scripts/payBill.js"></script>
+
     <!-- <script src="./scripts/cashoutNewSelf.js"></script> -->
 
 
