@@ -33,18 +33,38 @@ document.getElementById('btn-cashout').addEventListener('click', function () {
     //5 pin 
     const pin = getValueFromInput('cashout-pin');
     console.log(pin);
-    if (pin === '2580') {
+    if (pin !== '2580') {
         // 5-1 ::true show an alert >> set balance
-        alert('Cashout Successfull');
-        console.log('New Balance:', newBalance);
-        setBalance(newBalance);
-
-    } else {
-        // 5-2  ::false show anerror alert > return
         alert('Invalid Pin');
         return;
+
+
+    }
+    else {
+        // 5-2  ::false show anerror alert > return
+        alert(`Cash Out Success TK: ${cashOutAmount} to  ${cashOutNumber} at ${new Date()}`);
+        console.log('New Balance:', newBalance);
+        setBalance(newBalance);
+        // 1. history container k dhorbo 
+        const history = document.getElementById('history-container');
+
+        // 2 new div create korbo 
+        const newHistory = document.createElement('div');
+        // 3 . new div er vitor inner html add korbo
+        newHistory.innerHTML = `
+        <div class="transaction-card p-5 bg-base-100 ">
+         Cash Out Success TK: ${cashOutAmount} to  ${cashOutNumber} at ${new Date()}
+        </div>
+         
+         `;
+        // 4. hisotory container e new div append korvo 
+        history.append(newHistory);
     }
 
 
 
 });
+
+
+
+

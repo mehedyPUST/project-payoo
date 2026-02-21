@@ -29,10 +29,24 @@ document.getElementById('add-money-btn').addEventListener('click', function () {
         alert('Invalid Pin');
         return;
     } else {
-        alert('Add Money Success ');
+        alert(`Add Money Success From ${bankName} . Account Number: ${accNumber} at ${new Date()}`);
         const currentBalance = getBalance();
         const balanceAfterAddMoney = currentBalance + Number(addMoneyAmount);
         setBalance(balanceAfterAddMoney);
+        // 1. history container k dhorbo 
+        const history = document.getElementById('history-container');
+
+        // 2 new div create korbo 
+        const newHistory = document.createElement('div');
+        // 3 . new div er vitor inner html add korbo
+        newHistory.innerHTML = `
+        <div class="transaction-card p-5 bg-base-100 ">
+         Add Money Success From ${bankName} . Account Number: ${accNumber} at ${new Date()}
+        </div>
+         
+         `;
+        // 4. hisotory container e new div append korvo 
+        history.append(newHistory);
 
     }
 

@@ -36,14 +36,20 @@ function showOnly(id) {
     const payBill = document.getElementById('pay-bill');
     const sendMoney = document.getElementById('send-money');
     const addMoney = document.getElementById('add-money');
+    const history = document.getElementById('history');
 
     cashout.classList.add('hidden');
     payBill.classList.add('hidden');
     sendMoney.classList.add('hidden');
     addMoney.classList.add('hidden');
+    history.classList.add('hidden');
 
     // id ala k show koro
     const selected = document.getElementById(id);
     selected.classList.remove('hidden');
+
+    // const clicked = document.getElementById(id);
+    // clicked.classList.remove('hidden');
+
 
 }
